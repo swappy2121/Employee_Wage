@@ -4,6 +4,7 @@
         public $check;
         public $PerHourWage = 20;
         public $fullDayHour = 8;
+        public $partTimeHrs = 4;
 
     
         public function welcomeWindow(){
@@ -12,7 +13,7 @@
 
         
          public function randNum(){
-            $this->check = rand(0, 1);
+            $this->check = rand(0, 2);
         }
 
        
@@ -21,8 +22,11 @@
                 echo "Employee is present \n";
                 $DailyWage = $this->PerHourWage * $this->fullDayHour;
                 echo "Daily Employee Wage :  $DailyWage";
-            }
-            else{
+            }elseif($this->check == 2){
+                echo "Employee is present \n";
+                $DailyWage = $this->PerHourWage * $this->partTimeHrs;
+                echo "Daily Employee Wage :  $DailyWage";
+            }else{
                 echo "Employee is absent \n";
             }
         }
