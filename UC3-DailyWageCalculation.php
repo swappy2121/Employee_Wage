@@ -1,40 +1,27 @@
 <?php
-    class EmployeeWage{
-        
-        public $check;
-        public $PerHourWage = 20;
-        public $fullDayHour = 8;
-        public $partTimeHrs = 4;
-
     
-        public function welcomeWindow(){
-            echo "Welcome to employee wage computation program \n";
-        }
+    echo "Welcome to Employee Wage Computation Program \n";
 
-        
-         public function randNum(){
-            $this->check = rand(0, 2);
-        }
+    $wagePerHour = 20;
+    $empHours;
+    $num = rand(0,2);
+    
 
-       
-        public function calDailyEmpWage(){
-            if($this->check == 1){
-                echo "Employee is present \n";
-                $DailyWage = $this->PerHourWage * $this->fullDayHour;
-                echo "Daily Employee Wage :  $DailyWage";
-            }elseif($this->check == 2){
-                echo "Employee is present \n";
-                $DailyWage = $this->PerHourWage * $this->partTimeHrs;
-                echo "Daily Employee Wage :  $DailyWage";
-            }else{
-                echo "Employee is absent \n";
-            }
-        }
+    switch($num){
+        case 1:
+            $empHours = 8;
+            break;
 
+        case 2:
+            $empHours = 4;
+            break;
+
+        default:
+            echo "Employee is absent \n";
+            $empHours = 0;
+            break;
     }
 
-    $wage = new EmployeeWage();
-    $wage->welcomeWindow();
-    $wage->randNum();
-    $wage->calDailyEmpWage();
+    $dailyEmpWage = $wagePerHour * $empHours;
+    echo "Daily Wage Of Employees : $dailyEmpWage";
 ?>
