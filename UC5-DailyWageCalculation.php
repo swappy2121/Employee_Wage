@@ -4,9 +4,13 @@
 
     $wagePerHour = 20;
     $empHours;
-    $num = rand(0,2);
+    $workingDaysPerMonth = 20;
+    $numOfWorkingDays = 1;
+    $monthlyEmpWage = 0;
+   
     
-
+    while($numOfWorkingDays <= $workingDaysPerMonth){
+    $num = rand(0,2);
     switch($num){
         case 1:
             $empHours = 8;
@@ -21,7 +25,10 @@
             $empHours = 0;
             break;
     }
-
+    $numOfWorkingDays++;
     $dailyEmpWage = $wagePerHour * $empHours;
-    echo "Daily Wage Of Employees : $dailyEmpWage";
+    echo "Daily Wage Of Employees : $dailyEmpWage \n";
+}
+echo "Monthly Employee Wage : $monthlyEmpWage";
+  
 ?>
