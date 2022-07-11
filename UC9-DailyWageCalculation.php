@@ -1,3 +1,4 @@
+
 <?php
 /*
 *Ability to save the employee wage for multiple companies
@@ -10,7 +11,7 @@
 
         //To get employee full time and part time hours
         public function getEmpHours(){
-                $num = rand(0,2); //Generating random numbers 0 and 2
+                $num = rand(0,2); 
                 
                 //Condition to get empHours i.e part time, full time or absent
                 switch($num){
@@ -23,7 +24,7 @@
                         break;
 
                     default:
-                        //echo "Employee is absent \n";
+                
                         $this->empHours = 0;
                         break;
                 }
@@ -67,11 +68,10 @@
         }
     }
 
-    //Object
-    $Wage = new EmpWageBuilder("Reliance", 50, 20, 120);
-    $Wage->calculateMonthlyWage();
-    $Wage1 = new EmpWageBuilder("Dmart", 40, 25, 150);
-    $Wage1->calculateMonthlyWage();
-    $empWage2 = new EmpWageBuilder("TCS", 60, 22, 140);
+    $empWage = new EmpWageBuilder("TATA", 50, 20, 120);
+    $empWage->calculateMonthlyWage();
+    $empWage1 = new EmpWageBuilder("Mahindra", 40, 25, 150);
+    $empWage1->calculateMonthlyWage();
+    $empWage2 = new EmpWageBuilder("Dmart", 60, 22, 140);
     $empWage2->calculateMonthlyWage();
 ?>
